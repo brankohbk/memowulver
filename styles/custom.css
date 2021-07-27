@@ -4,15 +4,19 @@ body{
   align-items: center;
 }
 .tablero{
-  width: clamp(20rem,80vw,46rem);
+  width: clamp(20rem,80vw,56rem);
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-  grid-auto-rows: 10rem;
+  grid-template-columns: repeat(3,1fr);
   gap: 1.3rem;  
 }
 
+@media (min-width:768px){
+  .tablero{
+    grid-template-columns: repeat(4,1fr);
+  }
+}
 .card{
-  background-color: rgb(71, 153, 179);
+  /* background-color: rgb(71, 153, 179); */
   background-image: url("../assets/wulver.jpg");
   background-position: center;
   background-size: contain;
@@ -20,6 +24,7 @@ body{
   place-content: center;
   cursor: pointer;
   font-weight: bolder ;
+  aspect-ratio: 1 / 1;
 }
 
 .card > *{
