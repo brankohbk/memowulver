@@ -1,0 +1,58 @@
+body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tablero{
+  width: clamp(20rem,80vw,46rem);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  grid-auto-rows: 10rem;
+  gap: 1.3rem;  
+}
+
+.card{
+  background-color: rgb(71, 153, 179);
+  background-image: url("../assets/wulver.jpg");
+  background-position: center;
+  background-size: contain;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  font-weight: bolder ;
+}
+
+.card > *{
+  display: none;
+}
+
+.card.activa{
+  /* background-color: rgb(179, 138, 71);   */
+  box-shadow: 0 0 .5rem .3rem rgb(179, 138, 71);
+}
+.card.activa.error{
+  /* background-color: rgb(179, 80, 71);   */
+  box-shadow: 0 0 .5rem .3rem rgb(179, 80, 71);
+}
+.card.emparejada{
+  /* background-color: rgb(53, 143, 31); */
+  box-shadow: 0 0 1rem .3rem rgb(102, 31, 143);
+  /* color: aliceblue; */
+  cursor: not-allowed;
+}
+.card.activa > *,
+.card.card.emparejada > *{
+  user-select: none;
+  display: block;
+}
+
+
+.modal-backdrop{
+  display: none;
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  place-content: center;
+  color: aliceblue;
+  font-size: 2rem;
+}
