@@ -87,14 +87,17 @@ function handleClick(e) {
     if (cartaActiva) {
       if (cartaActiva !== cartaSeleccionada && cartaActiva.dataset.nombre === cartaSeleccionada.dataset.nombre) {
         aciertos++
-        tablero.querySelectorAll(".activa").forEach(card => card.classList.add("emparejada"))
+        tablero.querySelectorAll(".activa").forEach(card => {
+          card.classList.add("emparejada")
+          card.classList.remove("activa")
+        })
       } else {
         tablero.querySelectorAll(".activa").forEach(card => card.classList.add("error"))
         fallas++
         tablero.style.pointerEvents = "none"
         setTimeout(() => {
           tablero.style.pointerEvents = ""
-          tablero.querySelectorAll(".activa:not(.emparejada)").forEach(card => {
+          tablero.querySelectorAll(".activa").forEach(card => {
             card.classList.remove("activa")
             card.classList.remove("error")
             card.style.backgroundImage = `url('./assets/wulver.jpg')`

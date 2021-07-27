@@ -34,8 +34,9 @@ body{
 .card.activa{
   /* background-color: rgb(179, 138, 71);   */
   box-shadow: 0 0 .5rem .3rem rgb(179, 138, 71);
+  pointer-events: none;
 }
-.card.activa.error{
+.card.error{
   /* background-color: rgb(179, 80, 71);   */
   box-shadow: 0 0 .5rem .3rem rgb(179, 80, 71);
 }
