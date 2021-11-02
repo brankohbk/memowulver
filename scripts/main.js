@@ -56,11 +56,13 @@ function mezclar(array) {
 
 let cartasMezcladas = mezclar(cartas)
 
-function llenarTablero(array) {  
+function llenarTablero(array) {
   array.forEach(carta => {
     let card = document.createElement("div")
     card.classList.add("card")
     card.dataset.nombre = carta.nombre
+    card.style.backgroundImage = `url('./assets/${carta.nombre}.jpg')`
+
     // card.innerHTML = `<span> ${carta.nombre} </span>`
     tablero.appendChild(card)
   });
@@ -68,6 +70,12 @@ function llenarTablero(array) {
 
 llenarTablero(cartasMezcladas)
 
+let segundos = 3
+setTimeout(() => {
+  tablero.querySelectorAll(".card").forEach(card => {
+    card.style.backgroundImage = `url('./assets/wulver.jpg')`
+  })
+}, segundos * 1000);
 
 
 
